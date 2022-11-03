@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mi_tienda_mascotas/alimenp.dart';
+import 'package:mi_tienda_mascotas/main.dart';
 import 'package:mi_tienda_mascotas/productc.dart';
 
 class PantallaP extends StatelessWidget {
@@ -57,6 +58,15 @@ class _MyHomePageState extends State<MyHomePage> {
                           ));
                     },
                     child: const Text("Productos de cuidado")),
+                      ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const MiApp() ,
+                          ));
+                    },
+                    child: const Text("Regresar")),
             Text(
               '',
             ),

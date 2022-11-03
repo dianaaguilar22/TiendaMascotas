@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mi_tienda_mascotas/main.dart';
 
 class PantallaO extends StatelessWidget {
   const PantallaO({super.key});
@@ -35,6 +36,15 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Image.asset('images/Animalitos.jpg'),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MiApp(),
+                      ));
+                },
+                child: const Text("Regresar")),
             
             Text(
               '',
