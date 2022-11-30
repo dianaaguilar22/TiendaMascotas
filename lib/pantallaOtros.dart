@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:mi_tienda_mascotas/alimeng.dart';
-import 'package:mi_tienda_mascotas/juguetesG.dart';
+import 'package:mi_tienda_mascotas/alimenO.dart';
+import 'package:mi_tienda_mascotas/juguetesO.dart';
 import 'package:mi_tienda_mascotas/main.dart';
-import 'package:mi_tienda_mascotas/productCuiG.dart';
-class PantallaG extends StatelessWidget {
-  const PantallaG({super.key});
+import 'package:mi_tienda_mascotas/productCuiO.dart';
+class PantallaO extends StatelessWidget {
+  const PantallaO({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Gatos',
+      title: 'Otros',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Gatos'),
+      home: const MyHomePage(title: 'Otros'),
     );
   }
 }
@@ -37,14 +37,14 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           children: [
-            Image.asset('images/gaitos.jpg'),
-            //botones
+            Image.asset('images/Animalitos.jpg'),
+            //botones 
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const AlimenG(),
+                        builder: (context) => const AlimenO(),
                       ));
                 },
                 child: const Text("Alimentos")),
@@ -54,16 +54,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const ProductCuiG(),
+                        builder: (context) =>const ProductCuiO(),
                       ));
                 },
                 child: const Text("Productos de cuidado")),
-                  ElevatedButton(
+              ElevatedButton(
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const JuguetesG() ,
+                            builder: (context) => const JuguetesO(),
                           ));
                     },
                     child: const Text("Juguetes")),
@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             builder: (context) => const MiApp() ,
                           ));
                     },
-                    child: const Text("Accesorios")),
+                    child: const Text("Accesorios")),  
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -85,6 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ));
                 },
                 child: const Text("Regresar")),
+            
             Text(
               '',
             ),

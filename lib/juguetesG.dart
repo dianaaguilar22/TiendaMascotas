@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:mi_tienda_mascotas/main.dart';
 
-class PantallaO extends StatelessWidget {
-  const PantallaO({super.key});
+class JuguetesG extends StatelessWidget {
+  const JuguetesG({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Otros',
+      title: 'Juguetes para Gatos',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Otros'),
+      home: const MyHomePage(title: 'Juguetes'),
     );
   }
 }
@@ -35,17 +34,6 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           children: [
-            Image.asset('images/Animalitos.jpg'),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const MiApp(),
-                      ));
-                },
-                child: const Text("Regresar")),
-            
             Text(
               '',
             ),

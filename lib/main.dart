@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mi_tienda_mascotas/otros.dart';
-import 'package:mi_tienda_mascotas/pantallag.dart';
-import 'package:mi_tienda_mascotas/pantallap.dart';
+import 'package:mi_tienda_mascotas/pantallaOtros.dart';
+import 'package:mi_tienda_mascotas/pantallaG.dart';
+import 'package:mi_tienda_mascotas/pantallaP.dart';
 
 void main() => runApp(const MiApp());
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class pCuidado extends StatelessWidget {
-  const pCuidado({super.key});
+class ProductCuiP extends StatelessWidget {
+  const ProductCuiP({super.key});
 
   @override
   Widget build(BuildContext context) {

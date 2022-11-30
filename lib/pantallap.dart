@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mi_tienda_mascotas/alimenp.dart';
+import 'package:mi_tienda_mascotas/juguetesP.dart';
 import 'package:mi_tienda_mascotas/main.dart';
-import 'package:mi_tienda_mascotas/productc.dart';
+import 'package:mi_tienda_mascotas/productCuiP.dart';
 
 class PantallaP extends StatelessWidget {
   const PantallaP({super.key});
@@ -44,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const aP() ,
+                            builder: (context) => const AlimenP() ,
                           ));
                     },
                     child: const Text("Alimentos")),
@@ -54,10 +55,28 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const pCuidado() ,
+                            builder: (context) => const ProductCuiP() ,
                           ));
                     },
                     child: const Text("Productos de cuidado")),
+                     ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const JuguetesP() ,
+                          ));
+                    },
+                    child: const Text("Juguetes")),
+                     ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const MiApp() ,
+                          ));
+                    },
+                    child: const Text("Accesorios")),
                       ElevatedButton(
                     onPressed: () {
                       Navigator.push(
