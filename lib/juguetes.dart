@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class JuguetesG extends StatelessWidget {
-  const JuguetesG({super.key});
+class juguetes extends StatelessWidget {
+  const juguetes({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Juguetes para Gatos',
+      title: 'Juguetes',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lightGreen,
       ),
       home: const MyHomePage(title: 'Juguetes'),
     );
@@ -34,6 +34,11 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           children: [
+            Image.asset(
+              'images/jugando.jpg',
+              width: 180,
+              height: 180,
+            ),
             Text(
               '',
             ),

@@ -8,7 +8,7 @@ class ProductCuiG extends StatelessWidget {
     return MaterialApp(
       title: 'Productos de cuidado',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lightGreen,
       ),
       home: const MyHomePage(title: 'Productos de cuidado'),
     );
@@ -34,6 +34,11 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           children: [
+            Image.asset(
+              'images/gato2.jpg',
+              width: 180,
+              height: 180,
+            ),
             Text(
               '',
             ),

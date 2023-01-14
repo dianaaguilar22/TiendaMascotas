@@ -31,6 +31,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  mongo_dart: ^0.8.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -65,6 +66,46 @@ flutter:
       - images/gaitos.jpg
       - images/perritos.jpg
       - images/Animalitos.jpg
+      - images/jugando.jpg
+      - images/Accesorios.jpg
+      - images/perro.jpg
+      - images/gato.jpg
+      - images/hamster.jpg
+      - images/perro2.jpg
+      - images/gato2.jpg
+      - images/huron.jpg
+      - images/mascotas.jpg
+      - images/perros.jpg
+      - images/gatos.jpg
+      - images/otros.jpg
+      - images/champu.jpg
+      - images/tazon.jpg
+      - images/juguetes.jpg
+      - images/collar.jpg
+      - images/alimento-perro-1.jpg
+      - images/alimento-perro-2.jpg
+      - images/alimento-perro-3.jpg
+      - images/comida-de-gato-1.jpg
+      - images/comida-de-gato-2.jpg
+      - images/comida-de-gato-3.jpg
+      - images/comida-para-pez.jpg
+      - images/alimento-mascotas-1.jpg
+      - images/alimento-mascotas-2.jpg
+      - images/champu-perro-1.jpg
+      - images/champu-perro-2.jpg
+      - images/cepillo-perro.jpg
+      - images/champu-gato-1.jpg
+      - images/champu-gato-2.jpg
+      - images/cepillo-gatos.jpg
+      - images/champu-mascotas.jpg
+      - images/champu-otros.jpg
+      - images/cuidado-mascotas.jpg
+      - images/juguete-1.jpg
+      - images/juguete-2.jpg
+      - images/juguete-3.jpg 
+      - images/cama-mascota.jpg 
+      - images/collar-mascota.jpg 
+      - images/ropa-mascota.jpg 
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

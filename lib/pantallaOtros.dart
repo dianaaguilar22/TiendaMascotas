@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mi_tienda_mascotas/accesorios.dart';
 import 'package:mi_tienda_mascotas/alimenO.dart';
-import 'package:mi_tienda_mascotas/juguetesO.dart';
+import 'package:mi_tienda_mascotas/juguetes.dart';
 import 'package:mi_tienda_mascotas/main.dart';
 import 'package:mi_tienda_mascotas/productCuiO.dart';
 class PantallaO extends StatelessWidget {
@@ -11,7 +12,7 @@ class PantallaO extends StatelessWidget {
     return MaterialApp(
       title: 'Otros',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lightGreen,
       ),
       home: const MyHomePage(title: 'Otros'),
     );
@@ -38,57 +39,98 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Image.asset('images/Animalitos.jpg'),
-            //botones 
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const AlimenO(),
-                      ));
-                },
-                child: const Text("Alimentos")),
-            //segundo boton
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>const ProductCuiO(),
-                      ));
-                },
-                child: const Text("Productos de cuidado")),
-              ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const JuguetesO(),
-                          ));
-                    },
-                    child: const Text("Juguetes")),
-                     ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const MiApp() ,
-                          ));
-                    },
-                    child: const Text("Accesorios")),  
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const MiApp(),
-                      ));
-                },
-                child: const Text("Regresar")),
-            
-            Text(
-              '',
-            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    //Aqui van los botones
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const AlimenO(),
+                            ));
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'images/tazon.jpg',
+                            width: 50,
+                            height: 50,
+                          ),
+                          const Text("Alimentos"),
+                        ],
+                      ),
+                    ),
+                    //Poner Segundo boton
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ProductCuiO(),
+                            ));
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'images/champu.jpg',
+                            width: 50,
+                            height: 50,
+                          ),
+                          const Text("Productos de cuidado"),
+                        ],
+                      ),
+                    ),
+                    //Poner Segundo boton
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const juguetes(),
+                            ));
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'images/juguetes.jpg',
+                            width: 50,
+                            height: 50,
+                          ),
+                          const Text("Juguetes"),
+                        ],
+                      ),
+                    ),
+                    //poner tercer boton
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const accesorios(),
+                            ));
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'images/collar.jpg',
+                            width: 50,
+                            height: 50,
+                          ),
+                          const Text("Accesorios"),
+                          
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
