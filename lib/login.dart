@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:mi_tienda_mascotas/agregarProductos.dart';
 import 'package:mi_tienda_mascotas/inicio.dart';
+import 'package:mi_tienda_mascotas/menuAdmin.dart';
 
 import 'package:mi_tienda_mascotas/recuperar.dart';
-
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -29,6 +30,17 @@ class PaginaLogin extends StatefulWidget {
 }
 
 class _PaginaLoginState extends State<PaginaLogin> {
+  final controlEmail = TextEditingController();
+  final controlPass = TextEditingController();
+
+  @override
+  void dispose() {
+    // Limpia el controlador cuando el Widget se descarte
+    controlEmail.dispose();
+    controlPass.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,17 +68,21 @@ class _PaginaLoginState extends State<PaginaLogin> {
                           fontWeight: FontWeight.bold),
                     ),
                     TextFormField(
-                        decoration: const InputDecoration(
-                      border: UnderlineInputBorder(),
-                      labelText: 'Email',
-                    )),
+                      decoration: const InputDecoration(
+                        border: UnderlineInputBorder(),
+                        labelText: 'Email',
+                      ),
+                      controller: controlEmail,
+                    ),
                     TextFormField(
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          border: UnderlineInputBorder(),
-                          labelText: 'Password',
-                        )),
-                    btnLogin(context),
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                        border: UnderlineInputBorder(),
+                        labelText: 'Password',
+                      ),
+                      controller: controlPass,
+                    ),
+                    btnLogin(context, controlEmail.text, controlPass.text),
                     const SizedBox(
                       height: 50,
                     ),
@@ -90,13 +106,28 @@ class _PaginaLoginState extends State<PaginaLogin> {
   }
 }
 
-ElevatedButton btnLogin(BuildContext context) {
+ElevatedButton btnLogin(BuildContext context, String usuario, String pass) {
   return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: Color.fromARGB(255, 38, 120, 243),
       ),
       onPressed: () {
-        navegar("home", context);
+        if (usuario == "diana" && pass == "12345") {
+          navegar("home", context);
+        } else if (usuario == "admin" && pass == "admin") {
+          navegar("menu", context);
+        } else {
+          showDialog(
+            context: context,
+            builder: (context) {
+              return const AlertDialog(
+                // Recup era el texto que el usuario ha digitado utilizando nuestro
+                // TextEditingController
+                content: Text("No existe el usuario"),
+              );
+            },
+          );
+        }
       },
       child: const Text(
         "Iniciar Sesión",
@@ -109,6 +140,10 @@ void navegar(String pantalla, BuildContext context) {
     case 'home':
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const Principal()));
+      break;
+    case 'menu':
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const Menu()));
       break;
     case 'recovery':
       Navigator.push(

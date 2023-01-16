@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mi_tienda_mascotas/login.dart';
+import 'package:mi_tienda_mascotas/mongo.dart';
 
+void main() async{
 
-void main() => runApp(const MiApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await MongoData.connect();
+  runApp(const MiApp());
+}
 
 class MiApp extends StatelessWidget {
   const MiApp({super.key});
@@ -27,8 +32,7 @@ class _InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-        
-        body: Login(),
+      body: Login(),
     );
   }
 }

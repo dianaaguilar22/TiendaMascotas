@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mi_tienda_mascotas/alimenp.dart';
+import 'package:mi_tienda_mascotas/mongo.dart';
 
 class ProductCuiG extends StatelessWidget {
   const ProductCuiG({super.key});
@@ -39,8 +41,27 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 180,
               height: 180,
             ),
-            Text(
-              '',
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 400,
+              child: FutureBuilder(
+                future: MongoData.obtenerCuidadoG(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<List<dynamic>> snapshot) {
+                  ListView comp = ListView();
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    print("Esperando");
+                  } else {
+                    if (snapshot.hasError) {
+                      print("error");
+                    } else {
+                      comp = datosAlimentos(snapshot.data!.toList(), context);
+                    }
+                  }
+
+                  return comp;
+                },
+              ),
             ),
           ],
         ),

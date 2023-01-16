@@ -71,6 +71,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                         ],
                       ),
                     ),
+                    const SizedBox(height: 10,),
                     //Poner Segundo boton
                     ElevatedButton(
                       onPressed: () {
@@ -92,6 +93,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                       ),
                     ),
                     //poner tercer boton
+                    const SizedBox(height: 10,),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.push(

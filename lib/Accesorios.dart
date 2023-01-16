@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mi_tienda_mascotas/alimenp.dart';
 import 'package:mi_tienda_mascotas/mongo.dart';
 
 class accesorios extends StatelessWidget {
@@ -40,83 +41,31 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 180,
               height: 180,
             ),
-            SizedBox(
-              width:MediaQuery.of(context).size.width ,
-              height:300 ,
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 400,
               child: FutureBuilder(
-                    future: MongoData.productos(),
-                    builder: (BuildContext context,
-                        AsyncSnapshot<List<dynamic>> snapshot) {
-                      ListView comp = new ListView();
-                      if (snapshot.connectionState == ConnectionState.waiting) {
-                        print("Esperando");
-                      } else {
-                        if (snapshot.hasError) {
-                          print("error");
-                        } else {
-                          comp = datosComunidad(snapshot.data!.toList(), true);
-                        }
-                      }
+                future: MongoData.obtenerAlimentoAcc(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<List<dynamic>> snapshot) {
+                  ListView comp = ListView();
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    print("Esperando");
+                  } else {
+                    if (snapshot.hasError) {
+                      print("error");
+                    } else {
+                      comp = datosAlimentos(snapshot.data!.toList(), context);
+                    }
+                  }
 
-                      return comp;
-                    },
-                  ),
-            )
+                  return comp;
+                },
+              ),
+            ),
           ],
         ),
       ),
     );
   }
-}
-ListView datosComunidad(List<dynamic> listas, bool comunidad) {
-  List<Container> lista = [];
-  List datosFinales = [];
-  for (var i = 0; i < listas.length; i++) {
-    var datos = listas
-        .elementAt(i)
-        .toString()
-        .replaceAll("{", "")
-        .replaceAll("}", "")
-        .split(",");
-
-    datosFinales.add(datos);
-  }
-
-  print(datosFinales);
-
-  for (var i = 0; i < datosFinales.length; i++) {
-    var valores = datosFinales[i];
-    var id = valores[0];
-    var nombre = valores[1];
-   
-   Container campo = Container(
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(15.0),
-              border: Border.all(color: Colors.black.withOpacity(0.25)),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color.fromARGB(255, 52, 52, 52).withOpacity(0.3),
-                  spreadRadius: 2,
-                  blurRadius: 5,
-                  offset: const Offset(0, 2), // changes position of shadow
-                ),
-              ]),
-          margin: const EdgeInsets.all(7),
-          child: Column(
-            children: [
-              Text("      Producto \n $id"),
-              Text("\n $nombre"),
-              
-            ],
-          ));
-    
-  }
-  return ListView.builder(
-    scrollDirection: Axis.vertical,
-    itemCount: lista.length,
-    itemBuilder: (context, index) {
-      return lista.elementAt(index);
-    },
-  );
 }
